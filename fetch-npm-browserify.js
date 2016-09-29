@@ -3,4 +3,5 @@
 //
 // Return that as the export for use in Webpack, Browserify etc.
 require('whatwg-fetch');
-module.exports = self.fetch.bind(self);
+var __self = typeof self !== 'undefined' ? self : this;
+module.exports = __self.fetch.bind(__self);
